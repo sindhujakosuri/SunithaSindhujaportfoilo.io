@@ -6,15 +6,16 @@
   <title>Kosuri Sunitha Sindhuja Portfolio</title>
   <style>
     :root {
-      /* Refreshed, vibrant palette */
-      --primary-color: #6a11cb;
-      --secondary-color: #2575fc;
-      --accent-color: #ffdd59;
-      --background-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
-      --light-background: #ffffff;
-      --text-color: #f4f7fa;
-      --shadow-glow: 0 0 20px rgba(101, 205, 255, 0.7);
-      --button-hover-glow: 0 0 20px 6px rgba(255, 221, 89, 0.8);
+      --primary-color: #5a189a;
+      --secondary-color: #00f5d4;
+      --accent-color: #f15bb5;
+      --highlight-color: #fee440;
+      --background-gradient: linear-gradient(135deg, #10002b, #240046, #3c096c);
+      --light-background: #f8f9fa;
+      --text-color: #f1f1f1;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --shadow-glow: 0 0 18px rgba(0, 245, 212, 0.6);
+      --button-hover-glow: 0 0 14px 4px rgba(241, 91, 181, 0.7);
     }
 
     * {
@@ -38,11 +39,10 @@
     header {
       position: fixed;
       width: 100%;
-      background: rgba(30, 42, 120, 0.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 25px var(--shadow-glow);
+      background: rgba(18, 18, 38, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-glow);
       z-index: 1000;
-      transition: background 0.4s ease;
     }
 
     nav {
@@ -57,23 +57,22 @@
     nav .logo {
       font-size: 2rem;
       font-weight: 900;
-      color: var(--accent-color);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--secondary-color);
+      color: var(--highlight-color);
+      letter-spacing: 2px;
       cursor: default;
+      text-shadow: 0 0 8px var(--highlight-color);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 1.3rem;
     }
 
     nav ul li {
       cursor: pointer;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
       transition: 0.4s ease;
       font-weight: 600;
       color: var(--text-color);
@@ -81,20 +80,19 @@
 
     nav ul li:hover,
     nav ul li.active {
-      background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-      color: var(--light-background);
+      background-color: var(--secondary-color);
+      color: #000;
       box-shadow: var(--button-hover-glow);
     }
 
     /* SECTIONS */
     section {
-      max-width: 1100px;
-      margin: 120px auto 60px;
-      padding: 2rem 3rem;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      max-width: 1200px;
+      margin: 100px auto 60px;
+      padding: 2.5rem 3rem;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
       animation: fadeInUp 1s ease forwards;
       opacity: 0;
       transform: translateY(40px);
@@ -106,15 +104,15 @@
     }
 
     h1, h2 {
+      color: var(--secondary-color);
       margin-bottom: 1rem;
       font-weight: 900;
       letter-spacing: 1.5px;
-      color: var(--accent-color);
-      text-shadow: 0 0 10px var(--accent-color), 0 0 15px var(--secondary-color);
+      text-shadow: 0 0 8px var(--secondary-color);
     }
 
-    h1 { font-size: 3.8rem; }
-    h2 { font-size: 2.8rem; }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.4rem; }
 
     /* HOME */
     #home {
@@ -123,54 +121,48 @@
       align-items: center;
       justify-content: center;
       gap: 3rem;
-      min-height: 90vh;
+      min-height: 80vh;
       text-align: center;
     }
 
     #home .home-text p {
-      font-size: 1.6rem;
-      margin: 1.5rem 0 2.5rem;
-      color: var(--secondary-color);
+      font-size: 1.4rem;
+      margin: 1.2rem 0;
+      color: var(--accent-color);
       font-weight: 600;
-      text-shadow: 0 0 8px var(--secondary-color);
+      text-shadow: 0 0 6px var(--accent-color);
     }
 
     #home .home-image img {
+      width: 100%;
       max-width: 260px;
       border-radius: 50%;
-      box-shadow:
-        0 0 40px var(--accent-color),
-        0 0 60px var(--secondary-color);
+      box-shadow: 0 0 40px var(--accent-color), 0 0 60px var(--secondary-color);
       animation: float 4s ease-in-out infinite;
-      transition: 0.5s ease;
+      transition: 0.4s ease;
     }
 
     #home .home-image img:hover {
-      transform: scale(1.08);
-      box-shadow:
-        0 0 90px var(--accent-color),
-        0 0 120px var(--secondary-color);
+      box-shadow: 0 0 80px var(--highlight-color), 0 0 100px var(--secondary-color);
     }
 
-    /* EDUCATION */
+    /* EDUCATION BLOCKS */
     .education-block {
-      margin-bottom: 2rem;
-      padding: 1.5rem 2rem;
-      border-left: 6px solid var(--secondary-color);
-      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 1.8rem;
+      padding: 1.5rem;
+      border-left: 6px solid var(--accent-color);
+      background: rgba(255,255,255,0.08);
       border-radius: 12px;
-      box-shadow: inset 0 0 15px #20305f88;
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
     }
+
     .education-block h3 {
       margin-bottom: 0.5rem;
-      color: var(--accent-color);
-      text-shadow: 0 0 6px var(--accent-color);
+      color: var(--highlight-color);
+      font-weight: 800;
     }
-    .education-block p {
-      font-size: 1.15rem;
-      margin: 0.3rem 0;
-      font-weight: 600;
-    }
+
+    .education-block p { font-size: 1.15rem; }
 
     /* SKILLS */
     .skills-container {
@@ -179,120 +171,140 @@
       gap: 2rem;
       justify-content: center;
     }
+
     .skill {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255,255,255,0.07);
       border-radius: 20px;
       width: 280px;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 0 15px var(--secondary-color);
-      transition: 0.4s ease;
+      padding: 1.6rem;
+      box-shadow: 0 8px 20px rgba(0, 245, 212, 0.3);
+      transition: 0.3s ease;
+      cursor: default;
     }
+
     .skill:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px var(--accent-color), inset 0 0 25px var(--secondary-color);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px var(--accent-color);
     }
+
     .skill h3 {
-      margin-bottom: 1.3rem;
-      color: var(--accent-color);
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
     }
+
     .progress-bar {
-      background: #111a3c;
+      background: #2a2a4a;
       border-radius: 25px;
       overflow: hidden;
-      position: relative;
-      height: 28px;
+      height: 26px;
+      box-shadow: inset 0 0 10px var(--secondary-color);
     }
+
     .progress-bar span {
       display: block;
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-      border-radius: 25px;
-      line-height: 28px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--highlight-color));
+      text-align: right;
+      line-height: 26px;
+      color: #000;
       font-weight: 700;
-      padding-right: 14px;
+      padding-right: 12px;
       transition: width 1.8s ease;
     }
 
     /* CERTIFICATES */
     .certificates-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 3rem;
-    }
-    .certificate-card {
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      box-shadow: 0 0 30px var(--secondary-color), inset 0 0 15px var(--accent-color);
-      transition: 0.4s ease;
-      text-align: center;
-      padding: 20px;
-    }
-    .certificate-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 60px var(--accent-color), inset 0 0 30px var(--secondary-color);
-    }
-    .certificate-image {
-      width: 85%;
-      margin: auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: inset 0 0 25px var(--secondary-color);
-    }
-    .certificate-image img {
-      width: 100%;
-      border-radius: 12px;
-    }
-    .certificate-desc {
-      font-weight: 700;
-      color: var(--accent-color);
-      text-shadow: 0 0 8px var(--secondary-color);
-      margin-top: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      justify-items: center;
+      padding-top: 1.5rem;
     }
 
-    /* CONTACT */
+    .certificate-card {
+      background-color: rgba(255,255,255,0.07);
+      border-radius: 16px;
+      box-shadow: 0 0 25px var(--secondary-color);
+      padding: 20px;
+      text-align: center;
+      transition: 0.4s ease;
+    }
+
+    .certificate-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 45px var(--accent-color);
+    }
+
+    .certificate-image img {
+      width: 100%;
+      max-height: 180px;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .certificate-desc {
+      margin-top: 1rem;
+      font-weight: 700;
+      color: var(--highlight-color);
+    }
+
+    /* CONTACT FORM */
     form {
       max-width: 600px;
       margin: 0 auto;
     }
+
     form label {
       display: block;
-      margin-bottom: 0.6rem;
-      font-weight: 900;
-      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
     }
+
     form input, form textarea {
       width: 100%;
       padding: 1rem;
-      margin-bottom: 1.7rem;
+      margin-bottom: 1.5rem;
       border-radius: 12px;
       border: 2px solid var(--secondary-color);
-      background: rgba(255, 255, 255, 0.07);
+      font-size: 1rem;
+      background: rgba(255,255,255,0.08);
       color: var(--text-color);
     }
-    form button {
-      padding: 1rem 2.2rem;
-      background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-      border: none;
-      border-radius: 30px;
-      color: white;
-      font-weight: 900;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: 0.4s ease;
-      box-shadow: 0 0 25px var(--accent-color);
-    }
-    form button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px var(--accent-color);
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 15px var(--accent-color);
     }
 
+    form button {
+      padding: 0.9rem 2rem;
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 18px var(--accent-color);
+    }
+
+    form button:hover {
+      background-color: var(--secondary-color);
+      color: #000;
+      box-shadow: 0 0 25px var(--highlight-color);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 1.2rem;
+      padding: 1rem;
       font-size: 1rem;
-      color: #ddd;
-      background: rgba(30, 42, 120, 0.6);
+      color: #ccc;
+      background: rgba(18, 18, 38, 0.9);
+      margin-top: auto;
     }
 
     /* ANIMATIONS */
@@ -300,19 +312,208 @@
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-10px); }
     }
 
     @media (max-width: 768px) {
-      nav ul { gap: 1rem; }
       #home { flex-direction: column; }
-      .skills-container { flex-direction: column; }
+      .skills-container { flex-direction: column; align-items: center; }
+      .skill { width: 90%; }
+      .certificate-card { width: 90%; }
     }
   </style>
 </head>
 <body>
-  <!-- SAME BODY STRUCTURE AS YOUR CODE (only CSS updated for unique look) -->
+  <header>
+    <nav>
+      <div class="logo">Sindhuja</div>
+      <ul id="nav-links">
+        <li class="nav-link active" data-target="home">Home</li>
+        <li class="nav-link" data-target="education">Education</li>
+        <li class="nav-link" data-target="skills">Skills</li>
+        <li class="nav-link" data-target="certificates">Certificates</li>
+        <li class="nav-link" data-target="contact">Contact</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="visible">
+      <div class="home-text">
+        <p>Welcome to My Portfolio</p>
+        <h1>Kosuri Sunitha Sindhuja</h1>
+        <h2>B.Tech 3rd Year Student</h2>
+        <p style="margin-top: 1rem; max-width: 480px; margin:auto;">
+          Passionate about Web Development & UI/UX Design. Skilled in HTML, CSS, React.js, and Node.js, building modern digital experiences.
+        </p>
+      </div>
+      <div class="home-image">
+        <img src="image.jpg" alt="Kosuri Sunitha Sindhuja Profile Picture" />
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-block">
+        <h3>Schooling</h3>
+        <p><strong>Sarad English Medium High School, Akividu</strong> - 2020</p>
+        <p>Percentage: 90%</p>
+      </div>
+      <div class="education-block">
+        <h3>Intermediate</h3>
+        <p><strong>Karthikeya Junior College, Akividu</strong> - 2022</p>
+        <p>Percentage: 98%</p>
+      </div>
+      <div class="education-block">
+        <h3>B.Tech (3rd Year)</h3>
+        <p><strong>Sasi Institute of Technology and Engineering</strong></p>
+        <p>Current Percentage: 92%</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills & Knowledge</h2>
+      <div class="skills-container">
+        <div class="skill">
+          <h3>HTML</h3>
+          <div class="progress-bar" aria-valuenow="80"><span>0%</span></div>
+        </div>
+        <div class="skill">
+          <h3>CSS</h3>
+          <div class="progress-bar" aria-valuenow="80"><span>0%</span></div>
+        </div>
+        <div class="skill">
+          <h3>Node.js</h3>
+          <div class="progress-bar" aria-valuenow="50"><span>0%</span></div>
+        </div>
+        <div class="skill">
+          <h3>React.js</h3>
+          <div class="progress-bar" aria-valuenow="50"><span>0%</span></div>
+        </div>
+        <div class="skill">
+          <h3>UI/UX Design</h3>
+          <div class="progress-bar" aria-valuenow="70"><span>0%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <div class="certificates-container">
+        <div class="certificate-card">
+          <div class="certificate-image">
+            <img src="pic1.jpg" alt="500 Problems CodeChef" />
+          </div>
+          <div class="certificate-desc">Completed 500 Problems in CodeChef</div>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-image">
+            <img src="pic2.jpg" alt="Java CodeChef" />
+          </div>
+          <div class="certificate-desc">Java Certificate - CodeChef</div>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-image">
+            <img src="pic3.jpg" alt="Hackathon Prayatna 2.0" />
+          </div>
+          <div class="certificate-desc">Hackathon Prayatna 2.0 - Participation</div>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-image">
+            <img src="pic4.jpg" alt="Internship Codec" />
+          </div>
+          <div class="certificate-desc">4 Months Full Stack Internship - Codec</div>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-image">
+            <img src="pic5.jpg" alt="CodeAlpha Internship" />
+          </div>
+          <div class="certificate-desc">1 Month Frontend Internship - CodeAlpha</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Info</h2>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+91 0000000000" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@gmail.com" required />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Kosuri Sunitha Sindhuja | All Rights Reserved
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    function activateLink() {
+      let scrollPosition = window.scrollY + 130;
+      sections.forEach(section => {
+        if (scrollPosition >= section.offsetTop &&
+            scrollPosition < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.target === section.id) link.classList.add('active');
+          });
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', activateLink);
+    window.addEventListener('load', () => {
+      activateLink();
+      animateSkills();
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById(link.dataset.target).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const skillsSection = document.getElementById('skills');
+    let skillsAnimated = false;
+
+    function animateSkills() {
+      const triggerPoint = window.innerHeight + window.scrollY > skillsSection.offsetTop + 100;
+      if (!skillsAnimated && triggerPoint) {
+        skillsAnimated = true;
+        const skillBars = skillsSection.querySelectorAll('.progress-bar span');
+        skillBars.forEach(bar => {
+          const targetWidth = bar.parentElement.getAttribute('aria-valuenow');
+          bar.style.width = targetWidth + "%";
+          setTimeout(() => bar.textContent = targetWidth + "%", 1800);
+        });
+      }
+    }
+    window.addEventListener('scroll', animateSkills);
+
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for reaching out! I will get back to you soon.');
+      e.target.reset();
+    });
+  </script>
 </body>
 </html>
