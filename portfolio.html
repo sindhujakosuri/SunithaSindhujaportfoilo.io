@@ -6,12 +6,10 @@
   <title>Kosuri Sunitha Sindhuja Portfolio</title>
   <style>
     :root {
-      --primary-color: #1e3c72;   /* Deep Blue */
-      --secondary-color: #2a5298; /* Medium Blue */
-      --accent-color: #f39c12;    /* Golden Accent */
-      --highlight-color: #27ae60; /* Calm Green */
-      --background-gradient: linear-gradient(135deg, #f4f6f9, #e6ebf3);
-      --light-background: #ffffff;
+      --primary-color: #0a192f;   /* Dark Navy */
+      --secondary-color: #64ffda; /* Teal Accent */
+      --accent-color: #ff7f50;    /* Soft Orange */
+      --background-gradient: linear-gradient(135deg, #f9f9fb, #eef1f6);
       --text-color: #2c3e50;
       --card-bg: #ffffff;
     }
@@ -37,7 +35,7 @@
     header {
       position: fixed;
       width: 100%;
-      background: #ffffffdd;
+      background: #ffffffee;
       backdrop-filter: blur(8px);
       border-bottom: 1px solid #ddd;
       z-index: 1000;
@@ -57,7 +55,6 @@
       font-weight: 900;
       color: var(--primary-color);
       letter-spacing: 1px;
-      cursor: default;
     }
 
     nav ul {
@@ -123,7 +120,7 @@
     #home .home-text p {
       font-size: 1.2rem;
       margin: 1rem 0;
-      color: var(--secondary-color);
+      color: var(--accent-color);
       font-weight: 600;
     }
 
@@ -131,7 +128,7 @@
       width: 100%;
       max-width: 240px;
       border-radius: 50%;
-      border: 4px solid var(--primary-color);
+      border: 4px solid var(--secondary-color);
       transition: 0.3s ease;
     }
 
@@ -154,8 +151,6 @@
       font-weight: 700;
     }
 
-    .education-block p { font-size: 1rem; }
-
     /* SKILLS */
     .skills-container {
       display: flex;
@@ -171,17 +166,16 @@
       width: 260px;
       padding: 1.2rem;
       transition: 0.3s ease;
-      cursor: default;
     }
 
     .skill:hover {
       transform: translateY(-5px);
-      border-color: var(--primary-color);
+      border-color: var(--secondary-color);
     }
 
     .skill h3 {
       margin-bottom: 0.8rem;
-      color: var(--secondary-color);
+      color: var(--primary-color);
     }
 
     .progress-bar {
@@ -195,10 +189,10 @@
       display: block;
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      background: var(--secondary-color);
       text-align: right;
       line-height: 22px;
-      color: #fff;
+      color: #0a192f;
       font-weight: 600;
       padding-right: 10px;
       transition: width 1.5s ease;
@@ -223,7 +217,7 @@
 
     .certificate-card:hover {
       transform: translateY(-6px);
-      border-color: var(--accent-color);
+      border-color: var(--secondary-color);
     }
 
     .certificate-image img {
@@ -249,7 +243,7 @@
       display: block;
       margin-bottom: 0.4rem;
       font-weight: 600;
-      color: var(--secondary-color);
+      color: var(--primary-color);
     }
 
     form input, form textarea {
@@ -265,15 +259,15 @@
 
     form input:focus, form textarea:focus {
       outline: none;
-      border-color: var(--primary-color);
+      border-color: var(--secondary-color);
     }
 
     form button {
       padding: 0.8rem 1.6rem;
-      background-color: var(--primary-color);
+      background-color: var(--secondary-color);
       border: none;
       border-radius: 6px;
-      color: #fff;
+      color: #0a192f;
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
@@ -281,7 +275,8 @@
     }
 
     form button:hover {
-      background-color: var(--secondary-color);
+      background-color: var(--accent-color);
+      color: #fff;
     }
 
     /* FOOTER */
@@ -499,4 +494,3 @@
   </script>
 </body>
 </html>
-
