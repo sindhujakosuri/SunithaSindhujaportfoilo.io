@@ -8,8 +8,8 @@
     :root {
       --primary-color: #0a192f;   /* Dark Navy */
       --secondary-color: #64ffda; /* Teal Accent */
-      --accent-color: #ff7f50;    /* Soft Orange */
-      --background-gradient: linear-gradient(135deg, #f9f9fb, #eef1f6);
+      --accent-color: #ff7f50;    /* Coral */
+      --background-gradient: linear-gradient(135deg, #f9fafb, #edf1f6);
       --text-color: #2c3e50;
       --card-bg: #ffffff;
     }
@@ -18,8 +18,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -34,6 +37,7 @@
     /* HEADER */
     header {
       position: fixed;
+      top: 0;
       width: 100%;
       background: #ffffffee;
       backdrop-filter: blur(8px);
@@ -88,7 +92,7 @@
       border: 1px solid #eee;
       opacity: 0;
       transform: translateY(40px);
-      animation: fadeInUp 1s ease forwards;
+      transition: all 0.8s ease;
     }
 
     section.visible {
@@ -289,12 +293,6 @@
       margin-top: auto;
     }
 
-    /* ANIMATIONS */
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
     @media (max-width: 768px) {
       #home { flex-direction: column; }
       .skills-container { flex-direction: column; align-items: center; }
@@ -465,7 +463,11 @@
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        document.getElementById(link.dataset.target).scrollIntoView({ behavior: 'smooth' });
+        const target = document.getElementById(link.dataset.target);
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
       });
     });
 
@@ -473,7 +475,7 @@
     let skillsAnimated = false;
 
     function animateSkills() {
-      const triggerPoint = window.innerHeight + window.scrollY > skillsSection.offsetTop + 100;
+      const triggerPoint = window.scrollY + window.innerHeight >= skillsSection.offsetTop + 100;
       if (!skillsAnimated && triggerPoint) {
         skillsAnimated = true;
         const skillBars = skillsSection.querySelectorAll('.progress-bar span');
@@ -484,6 +486,7 @@
         });
       }
     }
+
     window.addEventListener('scroll', animateSkills);
 
     document.getElementById('contact-form').addEventListener('submit', e => {
@@ -492,5 +495,3 @@
       e.target.reset();
     });
   </script>
-</body>
-</html>
